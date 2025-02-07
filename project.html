@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<!-- saved from url=(0034)http://127.0.0.1:5500/project.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .main {
+            width: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.5) 50%), 
+                        url('https://i0.pickpik.com/photos/965/714/472/tree-sunlight-background-relaxation-preview.jpg');
+            background-position: center;
+            background-size: cover;
+            height: 100vh;
+        }
+        .navbar {
+            width: 1200px;
+            height: 75px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .icon {
+            color: rgb(238, 102, 5);
+            font-size: 39px;
+            font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+            padding-left: 40px;
+        }
+        .menu ul {
+            display: flex;
+            list-style: none;
+        }
+        .menu ul li {
+            margin-left: 62px;
+        }
+        .menu ul li a {
+            text-decoration: none;
+            color: white;
+            font-family: 'Franklin Gothic Medium', Arial, sans-serif;
+            font-weight: bold;
+            transition: 0.4s ease-in-out;
+        }
+        .menu ul li a:hover {
+            color: orange;
+        }
+        .search {
+            display: flex;
+            align-items: center;
+        }
+        .srch {
+            font-size: 16px;
+            padding: 10px;
+            background: transparent;
+            border: 2px solid orange;
+            border-radius: 5px 0 0 5px;
+            color: white;
+        }
+        .btn {
+            background: orange;
+            color: white;
+            border: 2px solid orange;
+            font-size: 15px;
+            padding: 10px;
+            border-radius: 0 5px 5px 0;
+            cursor: pointer;
+        }
+        .content {
+            color: white;
+            margin-left: 20px;
+            margin-top: 10%;
+        }
+        .content h1 {
+            font-size: 50px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .content span {
+            color: orange;
+            font-size: 60px;
+        }
+        .content .par {
+            font-family: 'Courier New', Courier, monospace;
+            line-height: 30px;
+            margin-top: 20px;
+        }
+        .btn1
+         {
+            background-color: orange;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 20px;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .btn1 a
+         {
+            text-decoration: none;
+            color: black;
+        }
+        .btn1:hover {
+            background-color: white;
+        }
+        .form
+{
+    width: 300px;
+    height:350px;
+    background:linear-gradient(to top,rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+    position: absolute;
+    top:200px; 
+    left:870px;
+    padding-top: 100px;
+    border-radius: 10px;
+    padding: 25px;
+}
+        .form h2 {
+            text-align: center;
+            color: orange;
+            background-color: white;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        .form input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid orange;
+            font-size: 15px;
+            color: white;
+            margin-top: 10px;
+            padding: 5px;
+        }
+        .form input:focus {
+            outline: none;
+        }
+        .btn3 {
+            width: 100%;
+            margin-top: 20px;
+            background: orange;
+            padding: 10px;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+        .link {
+            text-align: center;
+            color:aliceblue;
+            padding-top: 5px;
+            padding-bottom:5px;
+            margin-top: 15px;
+        }
+        .link a {
+            padding-bottom:5px;
+
+            color: orange;
+            text-decoration: none;
+        }
+        .liw {
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <h2 class="icon">PraRoz</h2>
+            <div class="menu">
+                <ul>
+                    <li><a href="http://127.0.0.1:5500/project.html#">HOME</a></li>
+                    <li><a href="http://127.0.0.1:5500/project.html#">ABOUT</a></li>
+                    <li><a href="http://127.0.0.1:5500/project.html#">SERVICE</a></li>
+                    <li><a href="http://127.0.0.1:5500/project.html#">DESIGN</a></li>
+                    <li><a href="http://127.0.0.1:5500/project.html#">CONTACT</a></li>
+                </ul>
+            </div>
+            <div class="search">
+                <input class="srch" type="search" placeholder="Type to text">
+            </div>
+
+                <button class="btn">Search</button>
+        </div>
+        <div class="content">
+            <h1>WEB DESIGN &amp;<br><span>DEVELOPMENT</span> <br>Course</h1>
+            <p class="par">"Web Development Course – Transform Your Ideas into Stunning Websites!"<br>
+                "Master the Art of Web Development – Build, Innovate, and Create the Future!".</p>
+            <button class="btn1"><a href="http://127.0.0.1:5500/project.html#">JOIN US</a></button>
+        </div>
+        <div class="form">
+            <h2>Login Here!</h2>
+            <input type="email" placeholder="Enter email">
+            <input type="password" placeholder="Enter password">
+            <button class="btn3">LOGIN</button>
+
+            <br>
+            <p style="color: aliceblue;"> Don'thave an account</p>
+            <br>
+            <button class=btn3><a href="http://127.0.0.1:5500/project.html#"> SIGN UP</a></button>
+        </div>
+    </div>
+
+
+</body>
+</html>

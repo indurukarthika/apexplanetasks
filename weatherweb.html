@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #121212;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-image: url("https://images.unsplash.com/photo-1592210454359-9043f067919b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8d2VhdGhlcnxlbnwwfHwwfHx8MA%3D%3D"); background-repeat: no-repeat;
+            /* background: linear-gradient(135deg, #67C3F3, #5A60D6); */
+            padding: 50px;
+            border-radius: 25px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            width: 100%;
+            height: 100vh;
+            color: rgb(40, 37, 37);
+            text-align: center;
+            display: flex;
+            font-size: 40px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .search-box {
+            display: flex;
+            background: white;
+            font-size: 40px;
+            border-radius: 50px;
+            padding: 10px;
+            width: 50%;
+            max-width: 500px;
+            align-items: center;
+        }
+        .search-box input {
+            border: none;
+            outline: none;
+            font-size: 40px;
+            flex: 1;
+            padding: 15px;
+            border-radius: 50px;
+            font-size: 20px;
+        }
+        .search-box button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 25px;
+            font-size: 40px;
+            padding: 10px;
+        }
+        .weather-icon {
+            font-size: 120px;
+            margin: 30px 0;
+            font-size: 80px;
+        }
+        h2, h3 {
+            font-size: 60px;
+        }
+        .weather-details {
+            display: flex;
+            justify-content: space-between;
+            width: 60%;
+            padding: 30px;
+        }
+        .weather-details div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: 24px;
+            font-size: 40px;
+        }
+        .weather-details img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="search-box">
+            <input type="text" id="city" placeholder="Enter city name">
+            <button onclick="getWeather()">🔍</button>
+        </div>
+        <div class="weather-icon">🌦️</div>
+        <h2 id="temp">--°C</h2>
+        <h3 id="city-name">CITY</h3>
+        <div class="weather-details">
+            <div>
+                <img src="https://cdn-icons-png.flaticon.com/512/414/414927.png" alt="Humidity">
+                <p id="humidity">--%</p>
+                <p>HUMIDITY</p>
+            </div>
+            <div>
+                <img src="https://cdn-icons-png.flaticon.com/512/3104/3104612.png" alt="Wind Speed">
+                <p id="wind-speed">-- km/h</p>
+                <p>WIND SPEED</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function getWeather() {
+            const city = document.getElementById('city').value;
+            const apiKey = "375a58d481a1b20c9fbf9d254952b6e2";
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+            
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data.cod === 200) {
+                    document.querySelector(".weather-icon").textContent = "🌦️";
+                    document.getElementById('temp').textContent = `${data.main.temp}°C`;
+                    document.getElementById('city-name').textContent = data.name;
+                    document.getElementById('humidity').textContent = `${data.main.humidity}%`;
+                    document.getElementById('wind-speed').textContent = `${data.wind.speed} km/h`;
+                } else {
+                    document.getElementById('city-name').textContent = "City not found!";
+                }
+            } catch (error) {
+                document.getElementById('city-name').textContent = "Error fetching data.";
+            }
+        }
+    </script>
+</body>
+</html>
